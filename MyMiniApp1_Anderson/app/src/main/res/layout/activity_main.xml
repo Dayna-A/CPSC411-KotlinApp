@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:backgroundTint="@color/background_color"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <EditText
+        android:id="@+id/networkSpeed"
+        android:layout_width="197dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="98dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginStart="51dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:hint="@string/network_speed_in_mbps"
+        android:inputType="number"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Mbps"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/file_Size"
+        tools:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/networkSpeedLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/network_speed"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/networkSpeed"
+        app:layout_constraintStart_toStartOf="@+id/networkSpeed" />
+
+    <TextView
+        android:id="@+id/Mbps"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="98dp"
+        android:layout_marginEnd="53dp"
+        android:text="@string/mbps"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/networkSpeed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/networkSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/mibs" />
+
+
+    <!--Figured out how to center the text vertically within the textView here:
+    https://stackoverflow.com/questions/21942349/horizontally-and-vertically-center-text-for-textview-in-android-->
+    <TextView
+        android:id="@+id/transferTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:contentDescription="@string/transfer_time"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="@string/_0"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="72sp"
+        app:layout_constraintBottom_toTopOf="@+id/file_Size"
+        app:layout_constraintEnd_toStartOf="@+id/units"
+        app:layout_constraintStart_toEndOf="@+id/transferIs"
+        app:layout_constraintTop_toBottomOf="@+id/group" />
+
+    <TextView
+        android:id="@+id/transferIs"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginBottom="92dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="41dp"
+        android:text="@string/transfer_time_is"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/fileSizeLabel"
+        app:layout_constraintEnd_toStartOf="@+id/transferTime"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:paddingRight="10dp" />
+
+    <TextView
+        android:id="@+id/units"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginBottom="113dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginStart="20dp"
+        android:paddingLeft="10dp"
+        android:text="@string/seconds"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/transferIs"
+        app:layout_constraintBottom_toTopOf="@+id/mibs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/transferTime" />
+
+    <android.support.constraint.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
+        app:constraint_referenced_ids="transferTime,transferIs,units,Mbps,file_Size,fileSizeLabel,networkSpeed,mibs,networkSpeedLabel"
+        app:layout_constraintBottom_toTopOf="@+id/transferTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/file_Size"
+        android:layout_width="197dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="72dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginStart="51dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:hint="@string/file_size_in_mibs"
+        android:inputType="number"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/networkSpeed"
+        app:layout_constraintEnd_toStartOf="@+id/mibs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transferTime"
+        tools:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/fileSizeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/file_size"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/file_Size"
+        app:layout_constraintStart_toStartOf="@+id/file_Size" />
+
+    <TextView
+        android:id="@+id/mibs"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="71dp"
+        android:layout_marginEnd="53dp"
+        android:text="@string/mibs"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/file_Size"
+        app:layout_constraintBottom_toTopOf="@+id/Mbps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/file_Size"
+        app:layout_constraintTop_toBottomOf="@+id/units" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="142dp"
+        android:layout_height="139dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="16dp"
+        android:foregroundGravity="center_vertical|center"
+        android:src="@drawable/android_robot"
+        app:layout_constraintBottom_toTopOf="@+id/transferIs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</android.support.constraint.ConstraintLayout>
