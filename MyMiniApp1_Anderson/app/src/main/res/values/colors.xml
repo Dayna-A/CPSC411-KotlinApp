@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!--Found  out how to add the background colour here:
-     http://android4beginners.com/2013/06/appendix-b-everything-about-colors-in-android/-->
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="background_color">#464646</color>
-</resources>
