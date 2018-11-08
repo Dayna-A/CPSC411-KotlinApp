@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".BinaryCalcActivity" />
         <activity android:name=".BMICalcActivity"></activity>
+        <activity android:name=".CelsiusFarenheitCalcActivity"></activity>
     </application>
 
 </manifest>

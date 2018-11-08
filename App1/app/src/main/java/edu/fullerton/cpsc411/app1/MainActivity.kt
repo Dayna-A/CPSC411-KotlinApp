@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, BinaryCalcActivity::class.java)
                     startActivity(intent)
                 } else if (position == 2) {
-                    val intent = Intent(this@MainActivity, BinaryCalcActivity::class.java)
+                    val intent = Intent(this@MainActivity, CelsiusFarenheitCalcActivity::class.java)
                     startActivity(intent)
                 } else if (position == 3) {
                     val intent = Intent(this@MainActivity, BinaryCalcActivity::class.java)
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             val mainRow = linflater.inflate(R.layout.main_row, parent, false)
 
             //grab the textView from mainrow called calcView
-            val calculatorTV = calcView as TextView
+            val calculatorTV = mainRow.findViewById<TextView>(R.id.calcView)
             //set its text to item position from array in class
             calculatorTV.text = calculators.get(position)
 
