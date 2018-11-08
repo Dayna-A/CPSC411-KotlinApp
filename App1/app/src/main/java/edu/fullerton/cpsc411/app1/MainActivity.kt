@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, BinaryCalcActivity::class.java)
                     startActivity(intent)
                 } else if (position == 2) {
-                    val intent = Intent(this@MainActivity, CelsiusFarenheitCalcActivity::class.java)
+                    val intent = Intent(this@MainActivity, CelsiusFahrenheitCalcActivity::class.java)
                     startActivity(intent)
                 } else if (position == 3) {
                     val intent = Intent(this@MainActivity, BinaryCalcActivity::class.java)
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         private val calculators = arrayListOf<String>(
                 "BMI Calculator",
                 "Binary Calculator",
-                "another calculator",
+                "Temperature Calculator",
                 "another calculator"
         )
 
