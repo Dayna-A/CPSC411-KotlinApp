@@ -60,9 +60,8 @@ class CelsiusFahrenheitCalcActivity : AppCompatActivity() {
             var fahrenheitVal = Integer.parseInt(tvFahrenheitNum.text.toString())
             var celsiusVal = (fahrenheitVal-32)*(5.0/9.0)
 
-            val printResult = celsius_io as TextView
-
-            printResult.text = DecimalFormat("#.0#").format(celsiusVal)
+            celsius_io.setText("")
+            result_o.text= DecimalFormat("#.0#").format(celsiusVal)+"° C"
         }
     }
 
@@ -73,9 +72,8 @@ class CelsiusFahrenheitCalcActivity : AppCompatActivity() {
             var celsiusVal = Integer.parseInt(tvCelsiusNum.text.toString())
             var fahrenheitVal = (celsiusVal*(9.0/5.0))+32
 
-            val printResult = fahrenheit_io as TextView
-
-            printResult.text = DecimalFormat("#.0#").format(fahrenheitVal)
+            fahrenheit_io.setText("")
+            result_o.text=DecimalFormat("#.0#").format(fahrenheitVal)+"° F"
         }
     }
 
