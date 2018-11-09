@@ -7,18 +7,18 @@ import android.widget.EditText
 import android.widget.TextView
 import java.text.DecimalFormat
 import android.text.TextWatcher
+import edu.fullerton.cpsc411.app1.R.id.*
 import kotlinx.android.synthetic.main.activity_gasprice.*
-import kotlinx.android.synthetic.main.activity_temperature_calc.*
+
 
 class GasPriceActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_temperature_calc)
+        setContentView(R.layout.activity_gasprice)
 
-        //val tvPricePerGallon = pricePerGallon_i as EditText
-        val tvPricePerGallon = findViewById<EditText>(R.id.pricePerGallon_i)
-        val tvCurrencyPerUSD = findViewById<EditText>(R.id.currencyPerUSD_i)
+        val tvPricePerGallon = pricePerGallon_i as EditText
+        val tvCurrencyPerUSD = currencyPerUSD_i as EditText
 
         tvPricePerGallon!!.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
@@ -30,10 +30,7 @@ class GasPriceActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                //error checking for nullptr exception and empty case
-                if (s != null && !s.toString().equals("", ignoreCase = true)) {
-                    updateUPL(tvPricePerGallon)
-                }
+                updateUPL(tvPricePerGallon)
             }
         })
 
@@ -47,34 +44,51 @@ class GasPriceActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                //error checking for nullptr exception and empty case
-                if (s != null && !s.toString().equals("", ignoreCase = true)) {
-                    updateFPL(tvCurrencyPerUSD)
-                }
+                updateFPL(tvCurrencyPerUSD)
             }
         })
     }
 
     fun updateUPL(tvPricePerGallon: EditText) {
+        try{
+            if(pricePerGallon_i.editableText.isNotEmpty()) {
+                var pricePerUSGallon = (tvPricePerGallon.text.toString()).toDouble()
 
-        if(tvPricePerGallon.editableText.isNotEmpty()) {
+                var usdPerLiter = pricePerUSGallon/3.78541
 
-            var pricePerUSGallon = Integer.parseInt(tvPricePerGallon.text.toString())
-            var usdPerLiter = pricePerUSGallon/3.78541
+                usd_perLitre_val.text= "$ "+ (DecimalFormat("#.0##").format(usdPerLiter))
+            }else{
+                usd_perLitre_val.text="0.00"
+                yourCurrency.text="0.00"
+            }
+        }catch (inputEventSender: Exception) {
 
-            usd_perLitre_val.text= "$ "+ (DecimalFormat("#.0#").format(usdPerLiter))
+        }catch (MessageQueue: Exception){
+
+        }catch(AndroidRuntime: Exception){
+
         }
     }
 
     fun updateFPL(tvCurrencyPerUSD: EditText) {
+        try{
 
-        if(pricePerGallon_i.editableText.isNotEmpty()&& currencyPerUSD_i.editableText.isNotEmpty()) {
+            if(pricePerGallon_i.editableText.isNotEmpty()&& currencyPerUSD_i.editableText.isNotEmpty()) {
 
-            var pricePerUSGallon = Integer.parseInt(pricePerGallon_i.text.toString())
-            var foreignCurrencyPerUSD = Integer.parseInt(tvCurrencyPerUSD.text.toString())
-            var foreignCurPerLiter = (pricePerUSGallon/3.78541)*foreignCurrencyPerUSD
+                var pricePerUSGallon = (pricePerGallon_i.text.toString()).toDouble()
+                var foreignCurrencyPerUSD = (tvCurrencyPerUSD.text.toString()).toDouble()
+                var foreignCurPerLiter = (pricePerUSGallon/3.78541)*foreignCurrencyPerUSD
 
-            yourCurrency.text= DecimalFormat("#.0#").format(foreignCurPerLiter)
+                yourCurrency.text= DecimalFormat("#.0#").format(foreignCurPerLiter)
+            }else{
+                yourCurrency.text="0.00"
+            }
+        }catch (inputEventSender: Exception) {
+
+        }catch (MessageQueue: Exception){
+
+        }catch(AndroidRuntime: Exception){
+
         }
     }
 

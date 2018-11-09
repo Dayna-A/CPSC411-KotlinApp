@@ -18,27 +18,14 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/newNumLabelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="New Number"
-        app:layout_constraintBottom_toTopOf="@+id/newNumberTextView"
-        app:layout_constraintStart_toStartOf="@+id/binaryNumEditText"
-        app:layout_constraintTop_toBottomOf="@+id/binaryNumEditText" />
-
     <EditText
         android:id="@+id/binaryNumEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="157dp"
         android:layout_marginEnd="3dp"
-        android:layout_marginBottom="65dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/newNumLabelTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/binaryTextView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,6 +34,7 @@
         android:id="@+id/newNumberTextView"
         android:layout_width="wrap_content"
         android:layout_height="62dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="111dp"
         android:gravity="center"
         android:text="0"
@@ -54,5 +42,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newNumLabelTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/binaryNumEditText" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Whole Number"
+        app:layout_constraintBottom_toTopOf="@+id/newNumberTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/binaryNumEditText" />
+
 </android.support.constraint.ConstraintLayout>
