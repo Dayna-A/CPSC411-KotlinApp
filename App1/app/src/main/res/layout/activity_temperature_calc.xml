@@ -40,7 +40,6 @@
         android:layout_width="196dp"
         android:layout_height="0dp"
         android:layout_marginBottom="182dp"
-        android:text="TextView"
         android:textAlignment="center"
         android:textSize="26sp"
         android:textStyle="bold"

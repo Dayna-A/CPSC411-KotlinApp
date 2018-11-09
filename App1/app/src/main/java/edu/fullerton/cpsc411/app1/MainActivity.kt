@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, CelsiusFahrenheitCalcActivity::class.java)
                     startActivity(intent)
                 } else if (position == 3) {
-                    val intent = Intent(this@MainActivity, BinaryCalcActivity::class.java)
+                    val intent = Intent(this@MainActivity, GasPriceActivity::class.java)
                     startActivity(intent)
                 }
 
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                 "BMI Calculator",
                 "Binary Calculator",
                 "Temperature Calculator",
-                "another calculator"
+                "Metric Gas Price Calculator"
         )
 
         //init the context val
