@@ -37,19 +37,22 @@ class BinaryCalcActivity : AppCompatActivity() {
     fun updateCalculation(tvBinaryNum: EditText) {
 
         if(tvBinaryNum.text.length > 0) {
-            var binaryNum = Integer.parseInt(tvBinaryNum.text.toString())
-            var i = 0
-            var decimalNum = 0
+            var binaryNum = tvBinaryNum.text.toString()
+
+            var j = 0
+            var decimalNum = 0.0
 
             val printResult = newNumberTextView as TextView
 
-            while(binaryNum != 0) {
-                val remainder = binaryNum % 10
-                binaryNum /= 10
-                decimalNum += (remainder * Math.pow(2.0, i.toDouble())).toInt()
-                i++
+            for(i in binaryNum.length-1 downTo 0) {
+                //for(i in 0..binaryNum.length-1) {
+                decimalNum += (binaryNum.get(i).toString().toDouble() * Math.pow(2.0, j.toDouble()))
+                println(binaryNum.get(j))
+                println(binaryNum.get(j).toString().toDouble())
+                println(Math.pow(2.0, j.toDouble()))
+                j++
             }
-            printResult.text = java.lang.Integer.toString(decimalNum)
+            printResult.text = java.lang.Integer.toString(decimalNum.toInt())
         }
     }
 

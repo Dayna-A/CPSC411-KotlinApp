@@ -11,7 +11,6 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import edu.fullerton.cpsc411.app1.R.id.calcView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_row.*
 
@@ -20,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         //Grabbing the listview object from Main Activity
         val listView1 = findViewById<ListView>(R.id.menu_listview)
@@ -59,7 +59,14 @@ class MainActivity : AppCompatActivity() {
                 "BMI Calculator",
                 "Binary Calculator",
                 "Temperature Calculator",
-                "Metric Gas Price Calculator"
+                "Gas Price Calculator"
+        )
+
+        private val descriptions = arrayListOf<String>(
+                "Calculator to get your Body Mass Index",
+                "Calculator for converting Binary to Decimal",
+                "Calculator for converting Fahrenheit to Celsius",
+                "Calculator for converting US Gas prices to Metric"
         )
 
         //init the context val
@@ -79,12 +86,17 @@ class MainActivity : AppCompatActivity() {
             //set its text to item position from array in class
             calculatorTV.text = calculators.get(position)
 
+            //grab the textView from mainrow called descriptionView
+            val calculatorDescriptionTV = mainRow.findViewById<TextView>(R.id.descriptionView)
+            //set its text to item position from array in class
+            calculatorDescriptionTV.text = descriptions.get(position)
+
             //return the view inflated with custom name
             return mainRow
         }
 
         override fun getItem(position: Int): Any {
-            return "dont need yet"
+            return "TEST"
         }
 
         override fun getItemId(position: Int): Long {

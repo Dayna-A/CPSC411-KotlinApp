@@ -7,14 +7,18 @@
 
     <EditText
         android:id="@+id/pricePerGallon_i"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="246dp"
+        android:layout_marginEnd="103dp"
         android:layout_marginTop="84dp"
         android:ems="10"
-        android:hint="$ Price Per US Gallon"
-        android:inputType="number"
+        android:hint=" Price Per US Gallon"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -24,7 +28,8 @@
         android:layout_marginEnd="84dp"
         android:ems="10"
         android:hint="Your Currency"
-        android:text="0.00"
+        android:inputType="numberDecimal"
+        android:numeric="decimal"
         app:layout_constraintBaseline_toBaselineOf="@+id/one_usd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/one_usd" />
@@ -48,7 +53,7 @@
         android:layout_height="26dp"
         android:layout_marginBottom="78dp"
         android:layout_marginTop="78dp"
-        android:text=" USD Per Litre"
+        android:text="USD Per Liter"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,11 +93,24 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginBottom="107dp"
-        android:text="Foreign Units Per Litre"
+        android:layout_marginBottom="106dp"
+        android:text="Foreign Currency Units Per Liter"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/yourCurrency"
-        app:layout_constraintTop_toBottomOf="@+id/usd_perLitre_val" />
+        app:layout_constraintTop_toBottomOf="@+id/pricePerGallon_i" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginStart="87dp"
+        android:text="$"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pricePerGallon_i"
+        app:layout_constraintEnd_toStartOf="@+id/pricePerGallon_i"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
