@@ -17,7 +17,10 @@ class BMICalcActivity : AppCompatActivity() {
         val printResult = BMITextView as TextView
 
         calcButton.setOnClickListener {
-            printResult.text = calcBMI();
+            if(hEditText.editableText.isNotEmpty()&&wEditText.editableText.isNotEmpty())
+            printResult.text = calcBMI()
+            else
+                printResult.text="0"
         }
     }
 
