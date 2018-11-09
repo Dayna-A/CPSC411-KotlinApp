@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BinaryCalcActivity">
+    android:background="@color/colorPrimaryDark"
+    tools:context=".BinaryCalcActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/binaryTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginStart="11dp"
         android:text="Binary Number"
-        app:layout_constraintBottom_toBottomOf="@+id/binaryNumEditText"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/binaryNumEditText"
         app:layout_constraintEnd_toStartOf="@+id/binaryNumEditText"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
@@ -22,40 +26,54 @@
         android:id="@+id/binaryNumEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="157dp"
-        android:layout_marginEnd="3dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="111dp"
         android:ems="10"
         android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/binaryTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/newNumberTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="62dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="111dp"
+        android:layout_width="171dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="26dp"
         android:gravity="center"
         android:text="0"
+        android:textAlignment="center"
+        android:textColorHighlight="@android:color/holo_green_light"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/binaryNumEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="40dp"
         android:text="Whole Number"
-        app:layout_constraintBottom_toTopOf="@+id/newNumberTextView"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/newNumberTextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/binaryNumEditText" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newNumberTextView"
+        app:srcCompat="@drawable/bindroid" />
 
 </android.support.constraint.ConstraintLayout>
