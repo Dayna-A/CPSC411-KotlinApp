@@ -3,21 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:layout_editor_absoluteY="81dp">
 
     <EditText
         android:id="@+id/fahrenheit_io"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:layout_marginTop="56dp"
         android:ems="10"
         android:hint="Degrees Fahrenheit"
         android:inputType="number"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/celsius_io"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,27 +26,38 @@
         android:id="@+id/celsius_io"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="98dp"
-        android:layout_marginStart="1dp"
         android:ems="10"
         android:hint="Degrees Celsius"
         android:inputType="number"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/result_o"
-        app:layout_constraintStart_toStartOf="@+id/fahrenheit_io"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fahrenheit_io" />
 
     <TextView
         android:id="@+id/result_o"
         android:layout_width="196dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="182dp"
+        android:layout_height="43dp"
         android:textAlignment="center"
+        android:textColor="@android:color/holo_green_light"
         android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/celsius_io" />
+        app:layout_constraintTop_toBottomOf="@id/celsius_io" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_o"
+        app:layout_constraintVertical_bias="0.829"
+        app:srcCompat="@drawable/allweatherdroid" />
 </android.support.constraint.ConstraintLayout>
