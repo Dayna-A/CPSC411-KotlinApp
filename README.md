@@ -6,7 +6,7 @@ Initial iterations of an inventory, sales and employee management system built t
 ```
 # Created by
 [Dayna Anderson](https://github.com/Dayna-A), 
-[Andrew Gomez](https://github.com/andrewtgomez96), 
+[Andrew Gomez](https://github.com/andrewtgomez96)
 
 # Installing
 To run this project you will need to do a few things.
