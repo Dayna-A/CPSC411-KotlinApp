@@ -14,5 +14,8 @@ Download & Install Android Visual Studio:
 ```
 https://visualstudio.microsoft.com/vs/android/
 ```
-Create an AVD:
+Create an AVD or connect your Android device to run the app!
+```
+https://docs.expo.io/versions/latest/workflow/android-studio-emulator
+```
 
