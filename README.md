@@ -10,6 +10,7 @@ Android Calculators app written in Kotlin to practice writting a multi-activity 
 
 # Installing
 To run this project you will need to do a few things.
+
 Download & Install Android Visual Studio:
 ```
 https://visualstudio.microsoft.com/vs/android/
