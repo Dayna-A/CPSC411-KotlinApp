@@ -4,7 +4,6 @@ A project for CPSC 411 Mobile Development Fall 2018
 ```
 Initial iterations of an inventory, sales and employee management system built to meet the needs of a small business owner who deals in selling electronics online via sites like Ebay and Amazon.
 ```
-```
 # Created by
 [Dayna Anderson](https://github.com/Dayna-A), 
 [Andrew Gomez](https://github.com/andrewtgomez96), 
