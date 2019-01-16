@@ -2,7 +2,7 @@
 A project for CPSC 411 Mobile Development Fall 2018
 #### Description:
 ```
-Initial iterations of an inventory, sales and employee management system built to meet the needs of a small business owner who deals in selling electronics online via sites like Ebay and Amazon.
+Android Calculators app written in Kotlin to practice writting a multi-activity app.
 ```
 # Created by
 [Dayna Anderson](https://github.com/Dayna-A), 
